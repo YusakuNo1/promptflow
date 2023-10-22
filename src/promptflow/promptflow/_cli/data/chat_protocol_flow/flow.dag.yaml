@@ -1,0 +1,26 @@
+inputs:
+  question:
+    type: string
+    default: Who is the first king of England?
+    is_chat_input: true
+  chat_history:
+    type: list
+    default: []
+    is_chat_history: true
+outputs:
+  output:
+    type: string
+    reference: ${chat_completion.output}
+    is_chat_output: true
+nodes:
+- name: chat_completion
+  type: python
+  source:
+    type: code
+    path: chat_completion_tool.py
+  inputs:
+    chat_history: ${inputs.chat_history}
+    question: ${inputs.question}
+    aoai_connection: local_default_azure_openai_connection2
+    acs_connection: local_default_azure_cognitive_search_connection
+  aggregation: false

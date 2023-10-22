@@ -1,0 +1,32 @@
+{
+  "package": {},
+  "code": {
+    "chat_completion_tool.py": {
+      "type": "python",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "list"
+          ]
+        },
+        "aoai_connection": {
+          "type": [
+            "AzureOpenAIConnection"
+          ]
+        },
+        "acs_connection": {
+          "type": [
+            "CognitiveSearchConnection"
+          ]
+        }
+      },
+      "source": "chat_completion_tool.py",
+      "function": "chat_completion_tool"
+    }
+  }
+}
